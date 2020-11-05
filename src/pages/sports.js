@@ -1,18 +1,26 @@
-import React from 'react';
 
-const Sports = () => {
+import React from 'react';
+import './App.css';
+import './assets/title'
+import SimpleSlide from './assets/title';
+import NewsBox from './assets/news_box';
+import './index.css';
+import Sports_background from './assets/Sports_background.mp4';
+
+function Sports() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh'
-      }}
-    >
-      <h1>Sports</h1>
+    <div>
+      <div class="fullscreen-bg">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="myVideo" style={{height: '130%', width: 'auto'}}>
+      <source src={Sports_background} type="video/mp4"/>
+    </video>
+  </div>
+    <div>
+      <SimpleSlide title={'Sports'} titleColor = {'White'}></SimpleSlide>
+      <NewsBox></NewsBox>
     </div>
+  </div>
   );
-};
+}
 
 export default Sports;

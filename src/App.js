@@ -7,7 +7,7 @@ import Sports from './pages/sports';
 import Politics from './pages/politics';
 import Entertainment from './pages/entertainment';
 import Science from './pages/science';
-import Home from './pages/index'
+import Home from './components/index'
 
 class FixedTopComponent extends React.Component {
   render() {
