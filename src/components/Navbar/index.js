@@ -25,7 +25,7 @@ const Navbar = () => {
             Sports
           </NavLink>
           <NavLink to='/politics' activeStyle>
-            Politics
+            Health
           </NavLink>
           <NavLink to='/entertainment' activeStyle>
             Entertainment

@@ -1,12 +1,12 @@
-
 import React from 'react';
 import './App.css';
 import './assets/title'
 import SimpleSlide from './assets/title';
-import NewsBox from './assets/news_box';
 import './index.css';
 import politicsBackground from './assets/politics_background.png'
-import Bag2 from './assets/taxi-3.png'
+import Bag2 from './assets/taxi-3.png';
+import { NewsContextProvider } from "./assets/Get_News";
+import News from "./assets/news";
 
 function Politics() {
   return (
@@ -26,8 +26,10 @@ function Politics() {
         left: '-1%'
       }}></img>
     <div>
-      <SimpleSlide title={'Politics'} titleColor = {'Black'}></SimpleSlide>
-      <NewsBox></NewsBox>
+      <SimpleSlide title={'Health'} titleColor = {'Black'}></SimpleSlide>
+      <NewsContextProvider category='health'>
+      <News />
+    </NewsContextProvider>
     </div>
   </div>
   );

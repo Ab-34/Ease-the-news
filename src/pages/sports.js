@@ -1,11 +1,11 @@
-
 import React from 'react';
 import './App.css';
 import './assets/title'
 import SimpleSlide from './assets/title';
-import NewsBox from './assets/news_box';
 import './index.css';
 import Sports_background from './assets/Sports_background.mp4';
+import { NewsContextProvider } from "./assets/Get_News";
+import News from "./assets/news";
 
 function Sports() {
   return (
@@ -17,7 +17,9 @@ function Sports() {
   </div>
     <div>
       <SimpleSlide title={'Sports'} titleColor = {'White'}></SimpleSlide>
-      <NewsBox></NewsBox>
+      <NewsContextProvider category='sports'>
+      <News />
+    </NewsContextProvider>
     </div>
   </div>
   );
