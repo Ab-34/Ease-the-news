@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from '@material-ui/core/Slide';
-import Fade from '@material-ui/core/Fade';
+
 
 export default function SimpleSlide(props) {
     return(
