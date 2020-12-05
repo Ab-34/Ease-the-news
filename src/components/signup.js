@@ -1,36 +1,60 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
 
+export default class CreateUser extends Component {
+  constructor(props) {
+    super(props);
 
-export default class SignUp extends Component {
-    render() {
-        return (
-            <form>
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-                <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p>
-                    Already registered <a href="/signin">sign in?</a>
-                </p>
-            </form>
-        );
+    this.state = {
+      username: ''
     }
-} 
+  }
+
+  onChangeUsername(e) {
+    this.setState({
+      username: e.target.value
+    })
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const user = {
+      username: this.state.username
+    }
+
+    console.log(user);
+
+    axios.post('http://localhost:3000/users/add', user)
+      .then(res => console.log(res.data));
+
+    this.setState({
+      username: ''
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>Create New User</h3>
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group"> 
+            <label>Email: </label>
+            <input  type="email"
+                required
+                className="form-control"
+                value={this.state.username}
+                onChange={this.onChangeUsername}
+                />
+          </div>
+          <div className="form-group">
+            <input type="submit" value="Create User" className="btn btn-primary" />
+          </div>
+        </form>
+      </div>
+    )
+  }
+}

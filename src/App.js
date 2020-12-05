@@ -8,7 +8,7 @@ import Politics from './pages/health';
 import Entertainment from './pages/entertainment';
 import Science from './pages/science';
 import Home from './components/index';
-import Signin from './components/signin';
+import Signup from './components/signup';
 import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -60,7 +60,7 @@ function App() {
         <Route path='/entertainment' component={Entertainment} />
         <Route path='/science' component={Science} />
         <div className={classes.signIn}>
-        <Route path='/signin' component={Signin}/>
+        <Route path='/signup' component={Signup}/>
         </div>
       </Switch>
     </Router>
