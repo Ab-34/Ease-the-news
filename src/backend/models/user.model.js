@@ -7,7 +7,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    trim: true,
+    trim: true,//removes spaces
     minlength: 3
   },
 }, {

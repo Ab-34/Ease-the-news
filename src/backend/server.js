@@ -1,11 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+// Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web 
+//page to be requested from another domain outside the domain from which the first resource was
+// served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos.
+
 const mongoose = require('mongoose');
-
-require('dotenv').config({ path: 'ENV_FILENAME' });
-
-//require('dotenv').config();
-
 const app = express();
 const port = 3000;
 

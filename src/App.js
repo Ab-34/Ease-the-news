@@ -9,13 +9,12 @@ import Entertainment from './pages/entertainment';
 import Science from './pages/science';
 import Home from './components/index';
 import Signup from './components/signup';
-import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme)=>
 ({
  
-    signIn: {
+    signUp: {
         width: '450px',
         margin: '0px auto 50px auto',
         background: '#ffffff',
@@ -42,10 +41,7 @@ class FixedTopComponent extends React.Component {
 
 function App() {
   const classes = useStyles();
-    const [checked, setChecked]=useState(false);
-    useEffect(()=> {
-        setChecked(true);
-    },[]);
+    
   return (
     <div>
     <Router>
@@ -59,7 +55,7 @@ function App() {
         <Route path='/politics' component={Politics} />
         <Route path='/entertainment' component={Entertainment} />
         <Route path='/science' component={Science} />
-        <div className={classes.signIn}>
+        <div className={classes.signUp}>
         <Route path='/signup' component={Signup}/>
         </div>
       </Switch>

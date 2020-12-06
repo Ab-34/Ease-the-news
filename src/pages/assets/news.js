@@ -3,7 +3,7 @@ import { NewsContext } from "./Get_News";
 import * as ReactBootstrap from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function News(props) {
+function News() {
   const { data } = useContext(NewsContext);
   console.log(data);
 

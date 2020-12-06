@@ -6,7 +6,8 @@ export const NewsContext = createContext();
 export const NewsContextProvider = (props) => {
   const [data, setData] = useState();
   const apiKey = "462b5bb5004e415781ba7c8619913e8a";
-
+  
+  // The most important thing to understand with the useEffect hook is that it attempts to runs after every single render of the component (including initial render) it is defined in.
   useEffect(() => {
     axios
       .get(

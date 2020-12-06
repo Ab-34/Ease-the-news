@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NewsContextProvider } from "../pages/assets/Get_News";
 import News from "../pages/assets/news";
 import homepage from '../pages/assets/homepage.mp4';
 import SimpleSlide from '../pages/assets/title';
 
 export default function Header() {
-    // useEffect(() => {
-    //     setChecked(true);
-    // }, []);
+ 
     return (
         <div>
             <div class="fullscreen-bg">
