@@ -5,16 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function News() {
   const { data } = useContext(NewsContext);
+  //Accepts a context object and
+  // returns the current context value for that context
   console.log(data);
 
   return (
     <div>
       <ReactBootstrap.Carousel>
-        {/* {data
-          ? data.articles.map((news) => (
-              <NewsArticle data={news} key={news.url} />
-            ))
-          : "Loading"} */}
+        
         <ReactBootstrap.Carousel.Item>
           <a href={data ? data.articles[0].url : "Loading"} target="_blank" rel="noopener noreferrer">
             <img

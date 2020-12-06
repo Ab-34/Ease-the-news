@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const NewsContext = createContext();
+//provides a way to pass data through the component tree without having to pass props down manually at every level
 
 export const NewsContextProvider = (props) => {
   const [data, setData] = useState();
@@ -9,6 +10,7 @@ export const NewsContextProvider = (props) => {
   
   // The most important thing to understand with the useEffect hook is that it attempts to runs after every single render of the component (including initial render) it is defined in.
   useEffect(() => {
+    //Promise based HTTP client
     axios
       .get(
         `https://newsapi.org/v2/top-headlines?country=in&pageSize=6&page=1&category=${props.category}&apiKey=${apiKey}`

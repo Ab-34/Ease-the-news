@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class CreateUser extends Component {
+  //constructor is a method used to initialize an object's state in a class
   constructor(props) {
     super(props);
 
